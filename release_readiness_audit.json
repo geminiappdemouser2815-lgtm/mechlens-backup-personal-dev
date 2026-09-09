@@ -24,7 +24,7 @@
       "name": "acceptance_logit_delta",
       "status": "not_recorded",
       "reason": "The only attached acceptance output is for 2.16.0; there is no 2.17.0 acceptance artifact to evaluate against its declared threshold.",
-      "inputs": ["Adapters/acceptance_test_output_v2.16.0.json", "Adapters/acceptance_test_notes.md"]
+      "inputs": ["Configs/acceptance_test_output_v2.16.0.json", "Adapters/acceptance_test_notes.md"]
     },
     {
       "name": "ci_confirmation",
@@ -62,7 +62,7 @@
         "max_logit_delta": 0.000039,
         "pass": true
       },
-      "inputs": ["Adapters/acceptance_test_output_v2.16.0.json"]
+      "inputs": ["Configs/acceptance_test_output_v2.16.0.json"]
     },
     "post_release_regression": {
       "issue": "#1121",
@@ -78,7 +78,7 @@
     "Releases/release_checklist.md",
     "Releases/demo_sweep_results.csv",
     "Releases/pr_merge_log.csv",
-    "Adapters/acceptance_test_output_v2.16.0.json",
+    "Configs/acceptance_test_output_v2.16.0.json",
     "Adapters/acceptance_test_notes.md",
     "Adapters/adapter_authoring_checklist.md",
     "Adapters/weight_conversion_checklist.csv",
