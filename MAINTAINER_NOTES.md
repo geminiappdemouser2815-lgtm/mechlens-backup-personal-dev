@@ -16,7 +16,7 @@ the triage queue, and the directory or note files that contain triage evidence:
 
 ```bash
 python3 release_evidence_gate.py \
-  --acceptance Adapters/acceptance_test_output_v2.16.0.json \
+  --acceptance Configs/acceptance_test_output_v2.16.0.json \
   --triage Notes/issue_triage_queue.csv \
   --evidence Notes/triage_1121_gemma3_logits.md
 ```
