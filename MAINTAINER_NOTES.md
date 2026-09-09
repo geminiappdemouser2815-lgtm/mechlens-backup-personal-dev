@@ -16,15 +16,13 @@ the triage queue, and the directory or note files that contain triage evidence:
 
 ```bash
 python3 release_evidence_gate.py \
-  --acceptance upload/acceptance_test_output_v2.16.0.json \
-  --triage upload/issue_triage_queue.csv \
-  --evidence upload/triage_1121_gemma3_logits.md
+  --acceptance Adapters/acceptance_test_output_v2.16.0.json \
+  --triage Notes/issue_triage_queue.csv \
+  --evidence Notes/triage_1121_gemma3_logits.md
 ```
 
-The `upload/` paths above are the attached-evidence layout used for this audit.
-In the repository, replace them with the corresponding checked-in evidence
-paths. `--evidence` may be supplied more than once; if it names a directory,
-the gate scans its Markdown triage notes.
+The paths above are repository-relative. `--evidence` may be supplied more than
+once; if it names a directory, the gate scans its Markdown triage notes.
 
 Exit codes:
 
