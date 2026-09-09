@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "release": "2.17.0",
+  "decision": {
+    "status": "do_not_ship",
+    "reason": "Required v2.17.0 release-gate evidence is absent; an active bug also lacks a recorded release-impact disposition."
+  },
+  "gates": [
+    {
+      "name": "release_schedule",
+      "status": "stale",
+      "configured_release_date": "2026-07-30",
+      "reason": "The configured date is already past and must be reconciled before this evidence can be associated with a current cut.",
+      "inputs": ["upload/release_config.yaml"]
+    },
+    {
+      "name": "demo_notebook_sweep",
+      "status": "not_recorded",
+      "reason": "The sweep results contain releases through 2.16.0 only; no 2.17.0 result is recorded.",
+      "required_by": "A failed or missing pre-release sweep blocks the cut.",
+      "inputs": ["upload/demo_sweep_results.csv", "upload/release_checklist.md"]
+    },
+    {
+      "name": "acceptance_logit_delta",
+      "status": "not_recorded",
+      "reason": "The only attached acceptance output is for 2.16.0; there is no 2.17.0 acceptance artifact to evaluate against its declared threshold.",
+      "inputs": ["upload/acceptance_test_output_v2.16.0.json", "upload/acceptance_test_notes.md"]
+    },
+    {
+      "name": "ci_confirmation",
+      "status": "not_recorded",
+      "reason": "No v2.17.0 CI result or maintainer confirmation is present in the evidence set.",
+      "inputs": ["upload/release_checklist.md"]
+    },
+    {
+      "name": "open_bug_disposition",
+      "status": "needs_decision",
+      "issue": "#1108",
+      "title": "another SAE edge case",
+      "recorded_status": "in-progress",
+      "reason": "The issue is still active and has no recorded classification as fixed, deferred/non-blocking, or release-blocking.",
+      "inputs": ["upload/issue_triage_queue.csv"]
+    }
+  ],
+  "blockers": [
+    "Reconcile the configured 2.17.0 release date before attaching gate evidence to the cut.",
+    "Record a green v2.17.0 demo-notebook sweep.",
+    "Record a green v2.17.0 acceptance-suite artifact, including its per-checkpoint logit deltas and threshold.",
+    "Record CI and acceptance-suite confirmation for v2.17.0.",
+    "Classify issue #1108 for release impact."
+  ],
+  "historical_measurements": {
+    "release": "2.16.0",
+    "acceptance": {
+      "dtype": "float32",
+      "threshold_abs_logit_delta": 0.0001,
+      "total": 6,
+      "passed": 6,
+      "failed": 0,
+      "gemma_3": {
+        "checkpoint": "google/gemma-3-1b",
+        "max_logit_delta": 0.000039,
+        "pass": true
+      },
+      "inputs": ["upload/acceptance_test_output_v2.16.0.json"]
+    },
+    "post_release_regression": {
+      "issue": "#1121",
+      "max_logit_delta": 0.00013,
+      "threshold_abs_logit_delta": 0.0001,
+      "hotfix_max_logit_delta": 0.000029,
+      "fixed_in": "2.16.1",
+      "inputs": ["upload/triage_1121_gemma3_logits.md"]
+    }
+  },
+  "input_inventory": [
+    "upload/release_config.yaml",
+    "upload/release_checklist.md",
+    "upload/demo_sweep_results.csv",
+    "upload/acceptance_test_output_v2.16.0.json",
+    "upload/acceptance_test_notes.md",
+    "upload/issue_triage_queue.csv",
+    "upload/triage_1121_gemma3_logits.md"
+  ]
+}
