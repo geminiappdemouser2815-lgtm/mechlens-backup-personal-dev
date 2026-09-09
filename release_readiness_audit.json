@@ -5,6 +5,15 @@
     "status": "do_not_ship",
     "reason": "Required v2.17.0 release-gate evidence is absent; an active bug also lacks a recorded release-impact disposition."
   },
+  "repository_context": {
+    "repository": "geminiappdemouser2815-lgtm/mechlens-backup-personal-dev",
+    "branches_present": ["gh-pages", "main", "release-readiness-gate"],
+    "development_branch": "absent",
+    "work_base_branch": "main",
+    "work_branch": "release-readiness-gate",
+    "pull_request_opened": false,
+    "note": "Work was based on main because this fork has no dev branch."
+  },
   "gates": [
     {
       "name": "release_schedule",
