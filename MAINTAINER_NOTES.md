@@ -9,6 +9,18 @@ Do not convert missing acceptance output, a missing demo sweep, or absent CI
 confirmation into a green status by carrying forward an earlier result. A
 release is ready only when its own required evidence is present and green.
 
+## Repository context for this review
+
+The fork used for this review has exactly these branches:
+
+- `gh-pages`
+- `main`
+- `release-readiness-gate`
+
+There is no `dev` branch. The release-readiness work was therefore cut from
+`main` onto `release-readiness-gate`. No pull request was opened; the branch is
+intentionally left there for maintainer review.
+
 ## Run the evidence gate
 
 Run the gate from the repository root, supplying the release's acceptance JSON,
