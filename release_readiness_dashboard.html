@@ -69,7 +69,7 @@
         <h3>#1108 — another SAE edge case</h3>
         <p><span class="badge amber">IN PROGRESS</span></p>
         <p class="note">The evidence does not say whether this is safe to defer. That decision must be explicit before tagging.</p>
-        <p class="note">Source: <code>upload/issue_triage_queue.csv</code></p>
+        <p class="note">Source: <code>Notes/issue_triage_queue.csv</code></p>
       </section>
 
       <section class="card wide" aria-labelledby="acceptance-heading">
@@ -95,13 +95,16 @@
         <h2 id="sources-heading">Evidence sources</h2>
         <p class="note">All paths are relative to the workspace root.</p>
         <ul>
-          <li><code>upload/release_config.yaml</code> — configured v2.17.0 date and gate definitions</li>
-          <li><code>upload/release_checklist.md</code> — required pre-release and release-day checks</li>
-          <li><code>upload/demo_sweep_results.csv</code> — sweep history through v2.16.0</li>
-          <li><code>upload/acceptance_test_output_v2.16.0.json</code> — threshold, six-result summary, and Gemma-3 short-prompt value</li>
-          <li><code>upload/acceptance_test_notes.md</code> — acceptance-test methodology</li>
-          <li><code>upload/issue_triage_queue.csv</code> — status of #1108</li>
-          <li><code>upload/triage_1121_gemma3_logits.md</code> — post-release reproduction and hotfix measurement</li>
+          <li><code>Configs/release_config.yaml</code> — configured v2.17.0 date and gate definitions</li>
+          <li><code>Releases/release_checklist.md</code> — required pre-release and release-day checks</li>
+          <li><code>Releases/demo_sweep_results.csv</code> — sweep history through v2.16.0</li>
+          <li><code>Releases/pr_merge_log.csv</code> — release-assigned merged-work history</li>
+          <li><code>Adapters/acceptance_test_output_v2.16.0.json</code> — threshold, six-result summary, and Gemma-3 short-prompt value</li>
+          <li><code>Adapters/acceptance_test_notes.md</code> — acceptance-test methodology</li>
+          <li><code>Adapters/adapter_authoring_checklist.md</code> — adapter acceptance-test and merge requirements</li>
+          <li><code>Adapters/weight_conversion_checklist.csv</code> — Gemma-3 conversion checks, including epsilon placement</li>
+          <li><code>Notes/issue_triage_queue.csv</code> — status of #1108</li>
+          <li><code>Notes/triage_1121_gemma3_logits.md</code> — post-release reproduction and hotfix measurement</li>
         </ul>
       </section>
     </div>
