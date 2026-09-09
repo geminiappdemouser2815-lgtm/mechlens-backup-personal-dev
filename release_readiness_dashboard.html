@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Release Readiness — v2.17.0</title>
+  <style>
+    :root { --ink:#18212f; --muted:#5f6b7a; --paper:#f5f7fb; --card:#fff; --line:#d9e0ea; --red:#a3212b; --amber:#9a5a00; --blue:#235a9f; --green:#197146; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:var(--paper); font:16px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    main { max-width:1100px; margin:0 auto; padding:38px 24px 64px; }
+    h1,h2,h3,p { margin-top:0; } h1 { font-size:2rem; margin-bottom:4px; } h2 { font-size:1.15rem; margin-bottom:14px; } h3 { font-size:1rem; margin-bottom:6px; }
+    .sub { color:var(--muted); margin-bottom:28px; }
+    .decision { display:flex; justify-content:space-between; gap:24px; padding:24px; background:#fff2f2; border:1px solid #efc7cc; border-left:7px solid var(--red); border-radius:10px; }
+    .decision strong { display:block; color:var(--red); font-size:1.25rem; letter-spacing:.02em; } .decision p { margin:5px 0 0; max-width:760px; }
+    .stamp { color:var(--muted); font-size:.86rem; text-align:right; white-space:nowrap; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; margin-top:22px; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:20px; }
+    .wide { grid-column:1 / -1; }
+    table { width:100%; border-collapse:collapse; font-size:.92rem; } th,td { text-align:left; padding:10px 8px; border-bottom:1px solid var(--line); vertical-align:top; } th { color:var(--muted); font-weight:650; }
+    tr:last-child td { border-bottom:0; }
+    .badge { display:inline-block; padding:2px 8px; border-radius:99px; font-size:.76rem; font-weight:700; letter-spacing:.03em; white-space:nowrap; }
+    .red { color:#831f28; background:#fde9eb; } .amber { color:#7e4900; background:#fff1d6; } .blue { color:#194d8a; background:#e8f1fc; } .green { color:#14633d; background:#e6f5ec; }
+    ul { margin:0; padding-left:20px; } li+li { margin-top:7px; }
+    code { color:#34435a; background:#edf1f6; padding:1px 4px; border-radius:4px; font-size:.88em; word-break:break-word; }
+    .measure { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:12px 0 18px; } .measure div { padding:12px; background:#f7f9fc; border-radius:7px; } .measure b { display:block; font-size:1.14rem; } .measure span { color:var(--muted); font-size:.78rem; }
+    .note { color:var(--muted); font-size:.9rem; } footer { color:var(--muted); font-size:.84rem; margin-top:25px; }
+    @media (max-width:720px) { .grid { grid-template-columns:1fr; } .wide { grid-column:auto; } .decision { display:block; } .stamp { margin-top:14px; text-align:left; } .measure { grid-template-columns:repeat(2,1fr); } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Release readiness</h1>
+    <p class="sub">TransformerLens · v2.17.0 · evidence audit for maintainer review</p>
+
+    <section class="decision" aria-labelledby="decision-heading">
+      <div><strong id="decision-heading">DO NOT SHIP</strong><p>Required v2.17.0 gate evidence is absent, and active issue #1108 has no recorded release-impact disposition.</p></div>
+      <div class="stamp">Audit schema v1<br>Offline, self-contained</div>
+    </section>
+
+    <div class="grid">
+      <section class="card wide" aria-labelledby="gates-heading">
+        <h2 id="gates-heading">Release gates</h2>
+        <table>
+          <thead><tr><th>Gate</th><th>State</th><th>Evidence / decision needed</th></tr></thead>
+          <tbody>
+            <tr><td>Release schedule</td><td><span class="badge amber">STALE</span></td><td>Configured v2.17.0 date is <code>2026-07-30</code>; reconcile the intended cut before attaching new evidence.</td></tr>
+            <tr><td>Demo-notebook sweep</td><td><span class="badge blue">NOT RECORDED</span></td><td>No v2.17.0 sweep exists in the results. A green pre-release sweep is required.</td></tr>
+            <tr><td>Acceptance logit delta</td><td><span class="badge blue">NOT RECORDED</span></td><td>No v2.17.0 acceptance artifact is available to evaluate against its threshold.</td></tr>
+            <tr><td>CI confirmation</td><td><span class="badge blue">NOT RECORDED</span></td><td>No current CI result or maintainer confirmation is present.</td></tr>
+            <tr><td>Open-bug disposition</td><td><span class="badge amber">NEEDS DECISION</span></td><td>#1108 remains in progress; classify it fixed, deferred/non-blocking, or release-blocking.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="card" aria-labelledby="blockers-heading">
+        <h2 id="blockers-heading">Blockers</h2>
+        <ul>
+          <li>Reconcile the configured release date.</li>
+          <li>Record a green v2.17.0 demo sweep.</li>
+          <li>Record per-checkpoint acceptance deltas and the declared threshold.</li>
+          <li>Record CI plus acceptance-suite confirmation.</li>
+          <li>Classify #1108 for release impact.</li>
+        </ul>
+      </section>
+
+      <section class="card" aria-labelledby="open-heading">
+        <h2 id="open-heading">Open item</h2>
+        <h3>#1108 — another SAE edge case</h3>
+        <p><span class="badge amber">IN PROGRESS</span></p>
+        <p class="note">The evidence does not say whether this is safe to defer. That decision must be explicit before tagging.</p>
+        <p class="note">Source: <code>upload/issue_triage_queue.csv</code></p>
+      </section>
+
+      <section class="card wide" aria-labelledby="acceptance-heading">
+        <h2 id="acceptance-heading">Acceptance evidence: v2.16.0 baseline and miss</h2>
+        <div class="measure">
+          <div><b>6 / 6</b><span>recorded acceptance passes</span></div>
+          <div><b>0.0001</b><span>declared absolute-delta threshold</span></div>
+          <div><b>0.000039</b><span>Gemma-3 short-prompt delta</span></div>
+          <div><b>0.00013</b><span>post-release longer-prompt delta</span></div>
+        </div>
+        <p>The 2.16.0 JSON recorded a green short-prompt Gemma-3 result. A subsequent correctness regression, #1121, reported a longer-prompt delta above the same threshold. The v2.16.1 fix recorded <code>0.000029</code>.</p>
+        <table>
+          <thead><tr><th>Checkpoint</th><th>Recorded result</th><th>Interpretation</th></tr></thead>
+          <tbody>
+            <tr><td><code>google/gemma-3-1b</code></td><td><span class="badge green">PASS</span> <code>0.000039</code> on the short suite prompt</td><td>Below <code>0.0001</code>, but not representative of the longer-prompt failure.</td></tr>
+            <tr><td>Post-release repro (#1121)</td><td><span class="badge red">FAIL</span> <code>0.00013</code></td><td>Above <code>0.0001</code>; norm-epsilon placement error.</td></tr>
+            <tr><td>v2.16.1 hotfix</td><td><span class="badge green">PASS</span> <code>0.000029</code></td><td>Corrected epsilon placement and strengthened the test.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="card wide" aria-labelledby="sources-heading">
+        <h2 id="sources-heading">Evidence sources</h2>
+        <p class="note">All paths are relative to the workspace root.</p>
+        <ul>
+          <li><code>upload/release_config.yaml</code> — configured v2.17.0 date and gate definitions</li>
+          <li><code>upload/release_checklist.md</code> — required pre-release and release-day checks</li>
+          <li><code>upload/demo_sweep_results.csv</code> — sweep history through v2.16.0</li>
+          <li><code>upload/acceptance_test_output_v2.16.0.json</code> — threshold, six-result summary, and Gemma-3 short-prompt value</li>
+          <li><code>upload/acceptance_test_notes.md</code> — acceptance-test methodology</li>
+          <li><code>upload/issue_triage_queue.csv</code> — status of #1108</li>
+          <li><code>upload/triage_1121_gemma3_logits.md</code> — post-release reproduction and hotfix measurement</li>
+        </ul>
+      </section>
+    </div>
+    <footer>This page is a static rendering of <code>release_readiness_audit.json</code>; it makes no network requests and requires no CDN.</footer>
+  </main>
+</body>
+</html>
